@@ -1,17 +1,9 @@
-// mychart.js
-define(['d3', 'wq/pandas', 'wq/chart'], function(d3, pandas, chart) {
-
-// Unpivoted data (single-row header)
-d3.csv("/data/2010.csv", render);
-
-// Pivoted data (multi-row header)
-pandas.get('/data/2010.csv', render);
-
-function render(error, data) {
-    d3.select('svg')
-       .selectAll('rect')
-       .data(data)
-       // ...
-}
-
+window.addEventListener( 'load', function () {
+    console.log('1111')
+    var urlData = '/data/2011.csv'
+    d3.csv( urlData, function (error, testData) {
+        console.log('222')
+        console.log(testData[4])
+    })
+    
 });
